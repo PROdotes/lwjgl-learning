@@ -50,6 +50,8 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void init() {
+        Shader testShader = new Shader("assets/shaders/default.glsl");
+
         vertexID = glCreateShader(GL_VERTEX_SHADER);
         glShaderSource(vertexID, vertexShaderSrc);
         glCompileShader(vertexID);
@@ -130,5 +132,6 @@ public class LevelEditorScene extends Scene {
         glDisableVertexAttribArray(1);
         glBindVertexArray(0);
         glUseProgram(0);
+
     }
 }

@@ -84,7 +84,7 @@ public class Window {
         glfwSetKeyCallback(glWindow, KeyListener::keyCallback);
 
         glfwMakeContextCurrent(glWindow);
-        glfwSwapInterval(1);
+        glfwSwapInterval(0);
         glfwShowWindow(glWindow);
 
         GL.createCapabilities();
