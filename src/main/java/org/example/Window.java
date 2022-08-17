@@ -19,8 +19,8 @@ public class Window {
     private boolean vSync = true;
 
     private Window() {
-        width = 800;
-        height = 600;
+        width = 16*80;
+        height = 9*80;
         title = "Window";
         r = g = b = a = 0.1f;
     }
@@ -70,7 +70,7 @@ public class Window {
 
         glfwDefaultWindowHints();
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
-        glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+        glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
         glfwWindowHint(GLFW_MAXIMIZED, GLFW_FALSE);
 
         glWindow = glfwCreateWindow(width, height, title, 0, 0);
@@ -95,7 +95,7 @@ public class Window {
     public void loop() {
         System.out.println("Window is looping...");
         float beginTime = Time.getTime(),
-                endTime = beginTime,
+                endTime,
                 totalTime = 0f,
                 fpsUpdate = 0.5f,
                 deltaTime = 0f;
